@@ -1,0 +1,37 @@
+.navbarIcons{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.isActive{
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* CSS للأجهزة اللوحية وأجهزة الكمبيوتر */
+@media (min-width: 768px) {
+    app-asid-minue {
+      display: block; /* إظهار app-asid-minue على الأجهزة اللوحية وأجهزة الكمبيوتر */
+    }
+    .cara img {
+      display: none; /* إخفاء الصورة على الأجهزة اللوحية وأجهزة الكمبيوتر */
+    }
+  }
+  
+  /* CSS للهواتف الذكية */
+  @media (max-width: 767px) {
+    app-asid-minue {
+      display: none; /* إخفاء app-asid-minue على الهواتف الذكية */
+    }
+    .cara img {
+      display: none; /* إخفاء الصورة على الهواتف الذكية */
+    }
+  }
+  
+  /* CSS للأجهزة الكمبيوتر (مع إظهار الصورة) */
+  @media (min-width: 768px) {
+    .cara img {
+      display: block; /* إظهار الصورة على الأجهزة اللوحية وأجهزة الكمبيوتر */
+    }
+  }
+  

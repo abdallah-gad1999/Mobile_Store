@@ -1,0 +1,6 @@
+.cardcontainer{
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}

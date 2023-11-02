@@ -1,0 +1,22 @@
+<div id="ditalsBody" class="rounded-container">
+    <div class="container">
+        <div class="row">
+            <div class="col sm-6">
+                <img [src]="prodect?.Img" class="img-fluid">
+            </div>
+            <div class="col sm-6">
+                <h2 id="prodectname">{{prodect?.name}}</h2>
+                <h3 id="prodectprice">{{prodect?.Price | currency:'EGB  ' }}</h3>
+                <div class="row m-3" id="deatilsbottun">
+                    <button id="butt" class="btn btn-outline-dark">Buy Now</button>
+                    <button class="btn btn-dark">Add to Basket</button>
+                    <button id="butt" class="btn btn-outline-dark" (click)="homePage()">Back To Prodect</button>
+                </div>
+                <div class="button-container" >
+                    <button id="buttn" class="btn btn-outline-dark" (click)="prevPage()" [disabled]="">Previous</button>
+                    <button class="btn btn-dark" (click)="nextPage()">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

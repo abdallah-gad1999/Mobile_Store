@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4 mt-5">
+      <form (ngSubmit)="addNewUser()" class="p-3">
+        <!-- First Name input -->
+        <div class="form-outline mb-2">
+          <input
+            type="text"
+            id="form2Example1"
+            class="form-control"
+            [(ngModel)]="user.firstName"
+            name="firstName"
+          />
+          <label class="form-label" for="form2Example1">First Name</label>
+        </div>
+        <!-- Last Name input -->
+        <div class="form-outline mb-2">
+          <input
+            type="text"
+            id="form2Example2"
+            class="form-control"
+            [(ngModel)]="user.lastName"
+            name="lastName"
+            required
+            minlength="5"
+          />
+          <label class="form-label" for="form2Example2"
+            >Last Name (Minimum 5 characters)</label
+          >
+          <div class="invalid-feedback">
+            The last name must be 5 or more characters.
+          </div>
+        </div>
+        <!-- Email input -->
+        <div class="form-outline mb-2">
+          <input
+            type="email"
+            id="form2Example3"
+            class="form-control"
+            [(ngModel)]="user.email"
+            name="email"
+            required
+            email
+          />
+          <label class="form-label" for="form2Example3">Email address</label>
+        </div>
+        <!-- Password input -->
+        <div class="form-outline mb-2">
+          <input
+            type="password"
+            id="form2Example4"
+            class="form-control"
+            [(ngModel)]="user.passowrd"
+            name="passowrd"
+          />
+          <label class="form-label" for="form2Example4">Password</label>
+        </div>
+        <!-- Rest of the form -->
+        <!-- ... -->
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mt-3">
+          Sign in
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

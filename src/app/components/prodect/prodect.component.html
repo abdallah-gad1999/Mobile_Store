@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row justify-content-center d-flex">
+    <div class="col-sm-4 ml-4 mb-4" *ngFor="let prd of prodictListFilter" [ngClass]="{'text-danger': prd.Price > 20000, 'bg-dark': prd.Quantity === 0}"
+      [ngStyle]="{'color': (prd.Price == 0) ? 'red' : 'black'}">
+      <div class="product">
+        <img [src]="prd.Img" class="img-fluid" appImgStyle>
+        <h2>{{ prd.name | uppercase }}</h2>
+        <h4>{{ prd.Price | discount| currency :"EGB   " }}</h4>
+        <h5>Quantity: {{ prd.Quantity }}</h5>
+
+        <div [ngSwitch]="prd.CateogryID">
+          <div *ngSwitchCase="1">Apple iPhone</div>
+          <div *ngSwitchCase="2">Infinix iPhone</div>
+          <div *ngSwitchDefault>Samsung iPhone</div>
+        </div>
+        <p>{{Date1|date:'longDate'}}</p>
+
+        <ng-container *ngIf="prd.Quantity > 0; else outOfStock">In stock</ng-container>
+        <ng-template #outOfStock>
+          <ng-container *ngIf="prd.Quantity <= 0; else notFound">Out of stock</ng-container>
+          <ng-template #notFound>Product not found</ng-template>
+        </ng-template>
+        
+        <button class="btn btn-success m-3" (click)="buyProduct(prd)" (click)="addToCard(prd)" [disabled]="prd.Quantity === 0">Add To Cart</button>
+        <button class="btn btn-danger m-3" (click)="removeProduct(prd.id)"> Delete </button>
+        <button class="btn btn-success" (click)="prdDitales(prd.id)" >Details</button>
+
+      </div>
+    </div>
+  </div>
+</div>

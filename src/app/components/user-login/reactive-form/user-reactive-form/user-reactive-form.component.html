@@ -1,0 +1,71 @@
+<h1 id="ccccc" > Add New Prodect</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4 mt-5">
+      <form (ngSubmit)="addnewprodect()" class="p-3">
+        <!-- First Name input -->
+        <div class="form-outline mb-2">
+          <input
+            type="text"
+            id="form2Example1"
+            class="form-control"
+            [(ngModel)]="prodect.name"
+            name="name"
+            placeholder="Name"
+          />
+          <label class="form-label"  for="form2Example1" placeholder="Name">Enter Prodect Name</label>
+        </div>
+        <!-- Last Name input -->
+        <div class="form-outline mb-2">
+          <input
+            type="text"
+            id="form2Example2"
+            class="form-control"
+            [(ngModel)]="prodect.Price"
+            name="Price"
+            required
+            minlength="5"
+            placeholder="Price"
+          />
+          <label class="form-label" for="form2Example2"
+            > Enter Prodect Price</label
+          >
+          <div class="invalid-feedback">
+            The last name must be 5 or more characters.
+          </div>
+        </div>
+        <!-- Email input -->
+        <div class="form-outline mb-2">
+          <input
+            type="text"
+            id="form2Example3"
+            class="form-control"
+            [(ngModel)]="prodect.Quantity"
+            name="Quantity"
+            required
+            email
+            placeholder="Quantity"
+          />
+          <label class="form-label" for="form2Example3" >Enter Prodect  Quantity</label>
+        </div>
+        <div class="form-outline mb-2">
+          <input
+            type="text"
+            id="form2Example3"
+            class="form-control"
+            [(ngModel)]="prodect.Img"
+            name="Img"
+            placeholder="Url Img"
+          />
+          <label class="form-label" for="form2Example3">Enter Prodect Img Url</label>
+        </div>
+        <img *ngIf="prodect.Img" [src]="prodect.Img" alt="Product Image" class="img-fluid" />
+        
+
+        <button type="submit" class="btn btn-dark btn-block mt-3">
+         Add New Prodect
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

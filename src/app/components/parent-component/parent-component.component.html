@@ -1,0 +1,29 @@
+<app-side-menu></app-side-menu>
+<div>
+    <label for="filterByname">filter by Price :</label>
+    <input type="text" id="filterPricee" name="filterByPrice" placeholder="Filter" [(ngModel)]="filterListINCild" class="form-control">
+</div>
+
+<app-prodect [filterListINCild]="filterListINCild" (addprodectToCard)="addToCard($event)"></app-prodect>
+<caption>cart</caption>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <td>Product image </td>
+            <td>Product Name</td>
+            <td>Product Price</td>
+            <td>Update</td>
+            <td>Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of cart">
+            <td><img [src]="item.Img" class="img-fluid" appImgStyle width="150px" height="150px"></td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.Price }}</td>
+            <td><button type="button" class="btn btn-success"> Update</button></td>
+            <td><button type="button" class="btn btn-danger"> Delet</button></td>
+           
+        </tr>
+    </tbody>
+</table>

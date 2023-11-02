@@ -1,0 +1,32 @@
+img{
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    justify-content: space-between;
+}
+.welcome{
+    text-align: center;
+}
+h2{
+    font-size: 20px;
+}
+.grondprodect{
+    background-color: bisque;
+}
+.yellow-bg {
+    background-color: yellow;
+  }
+  #filterByname{
+    margin: 10px;
+    width: 200px;
+    border-radius: 5px
+    
+    
+  }
+  #filterName{
+    font-size: 20px;
+  }
+  .container{
+    border-radius: 5px
+
+  }
